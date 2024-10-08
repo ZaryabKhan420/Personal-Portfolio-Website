@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PROJECTS } from "../assets/index";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
 const Projects = () => {
+  const [ismobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      setIsMobileView(true);
+    }
+  }, [window.innerWidth]);
+
   return (
     <section id="projects" className="pt-20">
       <motion.h2
@@ -13,7 +21,7 @@ const Projects = () => {
       >
         Projects
       </motion.h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 min-h-[80rem] sm:min-h-fit">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project) => {
           return (
             <motion.div
@@ -28,12 +36,12 @@ const Projects = () => {
                 whileHover={{ scale: 1.1 }}
                 src={project.image}
                 alt={project.name}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="h-[25rem] w-[25rem] object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 backdrop-blur-lg transition-opacity duration-500 group group-hover:opacity-100"
                 initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
+                whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
                 <h3 className="mb-2 text-xl">{project.name}</h3>
