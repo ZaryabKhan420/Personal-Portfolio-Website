@@ -36,7 +36,7 @@ const Projects = () => {
                 whileHover={{ scale: 1.1 }}
                 src={project.image}
                 alt={project.name}
-                className="h-[25rem] w-[25rem] object-cover transition-transform duration-500 group-hover:scale-110"
+                className="py-2 h-[30rem] sm:h-[22rem] w-[25rem] object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 backdrop-blur-lg transition-opacity duration-500 group group-hover:opacity-100"
@@ -44,9 +44,9 @@ const Projects = () => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="mb-2 text-xl">{project.name}</h3>
+                <h3 className="mb-2 text-xl text-center">{project.name}</h3>
                 <p className="mb-12 p-4">{project.description}</p>
-                <div className="flex gap-3">
+                <div className="flex gap-3 flex-wrap justify-center items-center">
                   <a
                     href={project.githubLink}
                     target="_blank"

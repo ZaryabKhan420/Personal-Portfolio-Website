@@ -3,6 +3,7 @@ import { NAVIGATION_LINKS } from "../assets/index";
 import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import logo from "../assets/logo.png";
+import cv from "../assets/Zaryab.pdf";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -53,6 +54,9 @@ const Navbar = () => {
                   </li>
                 );
               })}
+              <a href={cv} download>
+                Download CV
+              </a>
             </div>
           </div>
         </div>
@@ -78,21 +82,24 @@ const Navbar = () => {
             </div>
           </div>
           {isMobileMenuOpen && (
-            <ul className="ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md p-2">
-              {NAVIGATION_LINKS.map((item, index) => {
-                return (
-                  <li key={index} className="list-none">
-                    <a
-                      href={item.href}
-                      className="text-sm hover:text-yellow-400"
-                      onClick={(e) => handleLinkClick(e, item.href)}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+            <>
+              <ul className="ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md p-2">
+                {NAVIGATION_LINKS.map((item, index) => {
+                  return (
+                    <li key={index} className="list-none">
+                      <a
+                        href={item.href}
+                        className="text-sm hover:text-yellow-400"
+                        onClick={(e) => handleLinkClick(e, item.href)}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  );
+                })}
+                <a href={cv}> Download CV</a>
+              </ul>
+            </>
           )}
         </div>
       </nav>

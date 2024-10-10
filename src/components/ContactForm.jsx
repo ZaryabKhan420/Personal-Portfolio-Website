@@ -67,7 +67,7 @@ const ContactForm = () => {
     return errors;
   };
   return (
-    <section id="contact" className="p-4 lg:w-3/4">
+    <section id="contact" className="p-4 w-full lg:w-3/4">
       <h2 className="my-8 text-center text-2xl lg:text-3xl font-semibold tracking-tighter">
         Let's Connect
       </h2>
@@ -77,8 +77,8 @@ const ContactForm = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.7 }}
       >
-        <div className="mb-4 flex space-x-4">
-          <div className="lg:w-1/2">
+        <div className="mb-4 flex flex-col sm:flex-row sm:space-x-4">
+          <div className="w-full lg:w-1/2">
             <input
               type="text"
               name="name"
@@ -99,7 +99,7 @@ const ContactForm = () => {
             )}
           </div>
 
-          <div className="lg:w-1/2">
+          <div className="w-full lg:w-1/2">
             <input
               type="email"
               name="email"

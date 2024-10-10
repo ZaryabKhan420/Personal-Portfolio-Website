@@ -13,7 +13,7 @@ const Hero = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="my-8 p-2 text-2xl font-bold md:text-3xl lg:text-5xl">
+        <h2 className="my-8 text-2xl font-bold md:text-3xl lg:text-5xl">
           {heroData.name}
         </h2>
         <p className="text-xl tracking-tighter lg:text-2xl w-[100%] md:w-[70%] my-5">
